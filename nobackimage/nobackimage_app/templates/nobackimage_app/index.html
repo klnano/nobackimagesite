@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>背景除去サイト</title>
+</head>
+<body>
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{form.as_p}}
+        <button type="submit" id="btn">背景除去</button>
+    </form>
+     <img src="/media/output/output.png" width="200">
+    <form action="{% url 'delete' %}" method="post">
+        {% csrf_token %}
+        <button type="submit">削除</button>
+    </form>
+    <h2>サイトを出るときは必ず画像は削除してください。ほかの人に見られたら自己責任でお願いいたします。</h2>
+</body>
+</html>
